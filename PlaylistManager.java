@@ -11,10 +11,9 @@ public class PlaylistManager {
         if (command.equals("")) { return; } 
         else if (command.equals("new")) { if (argument.equals("")) { return; } else { JSONObject obj = new JSONObject(); obj.put("playlist-name", argument); Files.write(Paths.get("playlist-" + argument + ".json"), obj.toString(2).getBytes()); } }
         else if (command.equals("add")) { if (argument.equals("")) { return; } else { 
-                String[] parts = argument.split("\"");
-                if (parts.length < 3) { System.out.println("missed!"); return; }
+                if (args.length < 3) { System.out.println("missed!"); return; }
                 
-                String playlistName = parts[1], songName = parts[3], filePath = parts[5];
+                String playlistName = args[1], songName = parts[2], filePath = parts[3];
 
                 String playlistFile = "playlist-" + playlistName + ".json";
                 String content = new String(Files.readAllBytes(Paths.get(playlistFile)));
