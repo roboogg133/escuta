@@ -28,7 +28,7 @@ public class PlaylistManager {
             }
 
             System.out.print(result.toString().trim());
-        } 
+        }
         else { System.out.println("PlaylistManager: " + command + ": not found"); }
     }
 }
