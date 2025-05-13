@@ -12,7 +12,7 @@ public class PlaylistManager {
         else if (command.equals("new")) { if (argument.equals("")) { return; } else { JSONObject obj = new JSONObject(); obj.put("playlist-name", argument); Files.write(Paths.get("playlist-" + argument + ".json"), obj.toString(2).getBytes()); } }
         else if (command.equals("add")) { if (argument.equals("")) { return; } else { 
                 String[] parts = argument.split("\"");
-                if (parts.length < 7) { System.out.println("missed!"); return; }
+                if (parts.length < 3) { System.out.println("missed!"); return; }
                 
                 String playlistName = parts[1], songName = parts[3], filePath = parts[5];
 
