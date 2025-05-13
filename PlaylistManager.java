@@ -13,7 +13,7 @@ public class PlaylistManager {
         else if (command.equals("add")) { if (argument.equals("")) { return; } else { 
                 if (args.length < 3) { System.out.println("missed!"); return; }
                 
-                String playlistName = args[1], songName = parts[2], filePath = parts[3];
+                String playlistName = args[1], songName = args[2], filePath = args[3];
 
                 String playlistFile = "playlist-" + playlistName + ".json";
                 String content = new String(Files.readAllBytes(Paths.get(playlistFile)));
